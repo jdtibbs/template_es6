@@ -1,0 +1,14 @@
+{
+  "name": "template_babelify",
+  "version": "1.0.0",
+  "description": "Template project for ES6 with Browserify",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape app/**/*test.js"
+  },
+  "author": "jdtibbs",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
+}
