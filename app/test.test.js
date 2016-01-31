@@ -1,12 +1,7 @@
-var test = require('tape');
-var Table = require('./test');
+import doubleArray from './test';
+import test from 'tape';
 
-var table = new Table(5, 5);
-var table2 = new Table(2, 10);
-
-test('constructor', function(t) {
-	t.plan(2);
-
-	t.equal(table.cellCount(), 25);
-	t.equal(table2.cellCount(), 20);
+test('es6', (t) => {
+	t.plan(1);
+	t.deepEqual([2, 4, 6], doubleArray([1, 2, 3]));
 });
