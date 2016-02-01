@@ -17,18 +17,10 @@ fs.stat('./public', function(error, stats) {
 		.pipe(fs.createWriteStream('./public/favicon.ico'));
 
 
-	browserify({
-			debug: true
-		})
+	browserify('./app/app.js')
 		.transform('babelify', {
-			"presets": ["es2015"]
-		})
-		.require('./app/app.js', {
-			entry: true
+			presets: ['es2015']
 		})
 		.bundle()
-		.on("error", function(err) {
-			console.log("Error: " + err.message);
-		})
-		.pipe(fs.createWriteStream("./public/bundle.js"));
+		.pipe(fs.createWriteStream('./public/bundle.js'));
 });
