@@ -4,11 +4,23 @@
   "description": "Template project for ES6 with Browserify",
   "main": "index.js",
   "scripts": {
-    "test": "tape app/**/*test.js"
+    "build": "node scripts/build.js",
+    "start": "node scripts/server.js",
+    "test": "babel-node app/services/array.service.test.js"
   },
   "author": "jdtibbs",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "shelljs": "^0.5.3",
     "tape": "^4.4.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }
