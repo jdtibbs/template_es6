@@ -4,9 +4,11 @@
 
 An ES6 project template using Browserify and Babelify. 
 
-Babel Handbook(https://github.com/thejameskyle/babel-handbook)
+[Babel Handbook](https://github.com/thejameskyle/babel-handbook)
 
-Babelify(https://github.com/babel/babelify)
+[Babelify](https://github.com/babel/babelify)
+
+[Browserify](http://browserify.org/)
 
 Test: `npm test`
 
