@@ -5,5 +5,7 @@
 An ES6 project template using Browserify and Babelify. 
 
 Test: `npm test`
+
 Build: `npm run build`
-Run: 'npm start'
+
+Run: `npm start`
