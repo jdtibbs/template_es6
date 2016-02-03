@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/jdtibbs/template_es6.svg?branch=master)](https://travis-ci.org/jdtibbs/template_es6)
 
-An ES6 project template using Browserify and Babelify and Node.js scripts for task automation. 
+An ES6 project template using Browserify, Babelify and Node.js scripts for task automation. 
 
 Includes my very simple, home grown, not exactly hot module loader, you just have to hit browser refresh to see changes. 
 
