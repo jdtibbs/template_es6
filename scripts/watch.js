@@ -3,10 +3,9 @@ var fs = require('fs');
 
 console.log('Do an initial build...');
 exec('node ./scripts/build.js', function(error, stdout, stderr) {
-	if (error) {
+	if (error !== null) {
 		console.log(error);
 	}
-	console.log('...initial build is complete.');
 });
 
 // watch for file changes and execute a build.
@@ -20,12 +19,17 @@ var doBuild = false;
 
 watch.on('change', function(event, filename) {
 	if (!doBuild) {
+		// prevents processing duplicates, we only care that something changed.
 		doBuild = true;
+		// use a timeout to allow all the 'change' events to pass before we execute a build.
 		setTimeout(function() {
 			doBuild = false;
 			console.log('One or more files changed, start a build...');
 			exec('node ./scripts/build.js', function(error, stdout, stderr) {
-				console.log('...build complete.');
+				if (error !== null) {
+					console.log(error);
+				}
+				console.log('...build is complete.');
 			});
 		}, 2000);
 	}
@@ -38,6 +42,7 @@ watch.on('error', function(error) {
 
 console.log('Start the server...');
 exec('node ./scripts/server.js', function(error, stdout, stderr) {
-	console.log('Error executing server.js:');
-	console.log(error);
+	if (error !== null) {
+		console.log(error);
+	}
 });
