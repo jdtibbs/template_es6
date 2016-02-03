@@ -13,10 +13,13 @@ fs.stat('./public', function(error, stats) {
 		throw new Error('Attention: directory ./public was not initialized.');
 	}
 
-	fs.createReadStream('./app/index.html')
-		.pipe(fs.createWriteStream('./public/index.html'));
+	// copy files to ./public
+	fs.createReadStream('./app/app.css')
+		.pipe(fs.createWriteStream('./public/bundle.css'));
 	fs.createReadStream('./app/favicon.ico')
 		.pipe(fs.createWriteStream('./public/favicon.ico'));
+	fs.createReadStream('./app/index.html')
+		.pipe(fs.createWriteStream('./public/index.html'));
 
 	var writeable = fs.createWriteStream('./public/bundle.js');
 
@@ -30,7 +33,7 @@ fs.stat('./public', function(error, stats) {
 
 	// compress the ES5.
 	writeable.on('finish', function() {
-		if (process.argv.length > 2 && process.argv[2] === 'prod') {
+		if (process.argv.length > 2 && process.argv[2] === '-prod') {
 			fs.writeFile('./public/bundle.js', uglify.minify("./public/bundle.js").code);
 		}
 	});
