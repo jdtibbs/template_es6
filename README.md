@@ -1,15 +1,21 @@
 # ES6 with Browserify
 
-[![Build Status](https://travis-ci.org/jdtibbs/template_babelify.svg?branch=master)](https://travis-ci.org/jdtibbs/template_babelify)
+[![Build Status](https://travis-ci.org/jdtibbs/template_es6.svg?branch=master)](https://travis-ci.org/jdtibbs/template_es6)
 
-An ES6 project template using Browserify and Babelify. 
+An ES6 project template using Browserify and Babelify and Node.js scripts for task automation. 
 
-Babel Handbook(https://github.com/thejameskyle/babel-handbook)
+Includes my very simple, home grown, not exactly hot module loader, you just have to hit browser refresh to see changes. 
 
-Babelify(https://github.com/babel/babelify)
+[Task automation with npm](http://substack.net/task_automation_with_npm_run)
+
+[Babel Handbook](https://github.com/thejameskyle/babel-handbook)
+
+[Babelify](https://github.com/babel/babelify)
+
+[Browserify](http://browserify.org/)
+
+Develop: `npm run watch`
 
 Test: `npm test`
 
 Build: `npm run build`
-
-Run: `npm start`
