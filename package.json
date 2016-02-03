@@ -4,8 +4,8 @@
   "description": "Template project for ES6 with Browserify",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/build.js",
-    "build-prod": "browserify app/app.js -o  -t [ babelify --presets [ es2015 ] ] | uglifyjs -mc > public/bundle.js",
+    "build": "node scripts/build.js ",
+    "build-prod": "node scripts/build.js prod",
     "start": "node scripts/server.js",
     "test": "tape -r babel-register app/**/*test.js"
   },
@@ -17,7 +17,7 @@
     "browserify": "^13.0.0",
     "shelljs": "^0.5.3",
     "tape": "^4.4.0",
-    "uglifyjs": "^2.4.10"
+    "uglify-js": "^2.6.1"
   },
   "babel": {
     "presets": [
